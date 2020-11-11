@@ -19,8 +19,8 @@ float32_t cascadeiir(float32_t x, cascadestate_t *p) {
 
 float32_t cascadeiir_transpose(float32_t x, cascadestate_t *p) {
     float32_t y = (x * p->b[0]) + p->s[0]);
-    p->s[0]     = (x * p->b[0]) - (y * p->a[0]) + p->s[1];
-    p->s[1]     = (x * p->b[1]) - (y * p->a[1]);
+    p->s[0]     = (x * p->b[1]) - (y * p->a[0]) + p->s[1];
+    p->s[1]     = (x * p->b[2]) - (y * p->a[1]);
     return y;
 }
 
